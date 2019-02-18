@@ -55,7 +55,7 @@
               sum(rate(grpc_server_handled_total{%(etcd_selector)s}[5m])) BY (job, instance, grpc_service, grpc_method)
                 > 1
             ||| % $._config,
-            'for': '10m',
+            'for': '120m',
             labels: {
               severity: 'warning',
             },
@@ -71,7 +71,7 @@
               sum(rate(grpc_server_handled_total{%(etcd_selector)s}[5m])) BY (job, instance, grpc_service, grpc_method)
                 > 5
             ||| % $._config,
-            'for': '5m',
+            'for': '60m',
             labels: {
               severity: 'critical',
             },
